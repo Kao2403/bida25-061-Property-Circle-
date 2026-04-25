@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search Results</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h2>Property Circle</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Buy</a>
+        <a href="#">Rent</a>
+        <a href="#">Agents</a>
+        <button class="btn">Login</button>
+    </nav>
+</header>
+
+<div class="search-page">
+
+<!-- FILTER SIDEBAR -->
+<aside class="filters">
+
+<h3>Filters</h3>
+
+<label><input type="checkbox"> Apartment</label>
+<label><input type="checkbox"> House</label>
+<label><input type="checkbox"> Land</label>
+<label><input type="checkbox"> Commercial</label>
+
+<h4>Price Range</h4>
+<input type="range" min="50000" max="3000000">
+<p>Up to P 3,000,000</p>
+
+<h4>Bedrooms</h4>
+<label><input type="checkbox"> 1+</label>
+<label><input type="checkbox"> 2+</label>
+<label><input type="checkbox"> 3+</label>
+
+</aside>
+
+<!-- RESULTS -->
+<section class="results">
+
+<div class="results-header">
+<h3>120+ Properties Found</h3>
+<select>
+<option>Sort by: Newest</option>
+<option>Price Low-High</option>
+<option>Price High-Low</option>
+</select>
+</div>
+
+<!-- PROPERTY CARD -->
+<div class="property-list">
+
+<div class="property-row">
+    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1560185007-c5ca9d2c014d')"></div>
+    <div class="info">
+        <h4>Modern Apartment</h4>
+        <p>Gaborone</p>
+        <span>P 1,200,000</span>
+    </div>
+</div>
+
+<div class="property-row">
+    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be')"></div>
+    <div class="info">
+        <h4>3 Bed House</h4>
+        <p>Francistown</p>
+        <span>P 2,300,000</span>
+    </div>
+</div>
+
+<div class="property-row">
+    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae')"></div>
+    <div class="info">
+        <h4>Office Space</h4>
+        <p>Gaborone CBD</p>
+        <span>P 3,750,000</span>
+    </div>
+</div>
+
+<div class="property-row">
+    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471')"></div>
+    <div class="info">
+        <h4>Vacant Land</h4>
+        <p>Mahalapye</p>
+        <span>P 850,000</span>
+    </div>
+</div>
+
+</div>
+
+<!-- PAGINATION -->
+<div class="pagination">
+<button>‹</button>
+<button class="active">1</button>
+<button>2</button>
+<button>3</button>
+<button>›</button>
+</div>
+
+</section>
+
+</div>
+
+</body>
+</html>

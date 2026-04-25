@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Property Circle</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h2>Property Circle</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="listings.html">Listings</a>
+        <a href="agents.html">Agents</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <button class="btn">Login</button>
+        <button class="btn dark">Sign Up</button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-text">
+    <h1>Find Your Perfect Property with Property Circle</h1>
+    <p>Buy, rent or sell properties easily and connect with trusted agents.</p>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" onclick="switchTab(event, 'buy')">Buy</button>
+<button class="tab" onclick="switchTab(event, 'rent')">Rent</button>
+<button class="tab" onclick="switchTab(event, 'sold')">Sold</button>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Enter location">
+        <select>
+            <option>Property Type</option>
+            <option>House</option>
+            <option>Apartment</option>
+        </select>
+        <input type="number" placeholder="Min Price">
+        <input type="number" placeholder="Max Price">
+        <a href="search.html" class="btn dark">Search</a>
+    </div>
+</div>
+
+<div class="hero-image"></div>
+
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+<h3>Browse by Category</h3>
+
+<div class="category-grid">
+    <div class="category">Apartments</div>
+    <div class="category">Houses</div>
+    <div class="category">Land</div>
+    <div class="category">Commercial</div>
+</div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured">
+
+<div class="featured-header">
+    <h3>Featured Properties</h3>
+    <a href="#">View All</a>
+</div>
+
+<div class="property-grid">
+
+<div class="property-card">
+    <div class="property-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+    <div class="property-info">
+        <h4>Modern Apartment</h4>
+        <p>Gaborone</p>
+        <strong>P 3,200,000</strong>
+    </div>
+</div>
+
+<div class="property-card">
+    <div class="property-img" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994')"></div>
+    <div class="property-info">
+        <h4>3 Bed House</h4>
+        <p>Francistown</p>
+        <strong>P 1,200,000</strong>
+    </div>
+</div>
+
+<div class="property-card">
+    <div class="property-img" style="background-image:url('https://plus.unsplash.com/premium_photo-1663090742758-f3d54430d4eb?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D     ')"></div>
+    <div class="property-info">
+        <h4>Office Space</h4>
+        <p>Gaborone CBD</p>
+        <strong>P 2,300,000</strong>
+    </div>
+</div>
+
+<div class="property-card">
+    <div class="property-img" style="background-image:url('https://images.unsplash.com/photo-1603165022668-8502a0277471?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+    <div class="property-info">
+        <h4>Vacant Land</h4>
+        <p>Mochudi</p>
+        <strong>P 450,000</strong>
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <p>List Your Property with Us</p>
+    <button class="btn dark">Get Started</button>
+</section>
+
+<script src="script.js"></script>
+<script>
+   let currentTab = "buy";
+
+function switchTab(event, tab) {
+    currentTab = tab;
+
+    // Update active tab UI
+    document.querySelectorAll(".tab").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    event.target.classList.add("active");
+
+    // Update placeholder dynamically
+    const searchBox = document.querySelector(".search-box input");
+
+    if (tab === "buy") {
+        searchBox.placeholder = "Search properties to buy...";
+    } else if (tab === "rent") {
+        searchBox.placeholder = "Search rental properties...";
+    } else {
+        searchBox.placeholder = "Search sold properties...";
+    }
+}
+
+/* SEARCH BUTTON DEMO FUNCTION */
+document.querySelector(".search-box button").addEventListener("click", () => {
+    const location = document.querySelector(".search-box input").value;
+
+    if (location === "") {
+        alert("Please enter a location");
+        return;
+    }
+
+    alert(`Searching for ${currentTab} properties in ${location}`);
+});
+</script>
+
+</body>
+</html>
